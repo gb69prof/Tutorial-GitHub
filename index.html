@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Tutorial: Web app con ChatGPT e GitHub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Tutorial – Creare una web app con ChatGPT e pubblicarla su GitHub</h1>
+  <p>Dal testo di Freud alla pubblicazione online: guida passo passo per docenti e studenti.</p>
+</header>
+
+<main>
+  <nav>
+    <a href="#parte1-progetto">1. Progetto di base</a>
+    <a href="#parte2-chatgpt-testo">2. ChatGPT &amp; testo</a>
+    <a href="#parte3-media">3. Immagini, video, mappa</a>
+    <a href="#parte4-zip">4. Web app &amp; ZIP</a>
+    <a href="#gh-parte1">5. GitHub – ZIP &amp; repository</a>
+    <a href="#gh-parte2">6. GitHub – file &amp; cartelle</a>
+    <a href="#gh-parte3">7. Immagini su GitHub</a>
+    <a href="#gh-pages">8. Pubblicare con GitHub Pages</a>
+  </nav>
+
+  <section id="parte1-progetto">
+    <h2>PRIMA PARTE – Il progetto</h2>
+    <h3>Parte 1 — Creare il progetto di base della web app (solo testo)</h3>
+    <p>
+      La web app che vogliamo costruire parte da un’unica cosa: il testo del documento <strong>Freud.pdf</strong> che useremo come base concettuale.
+      In questa prima fase non esistono immagini, video, mappe o codice. Esiste solo il contenuto da riorganizzare.
+    </p>
+    <p>
+      L’obiettivo è semplice: <strong>preparare il materiale testuale</strong> che entrerà nella web app.
+    </p>
+    <p>Per farlo occorre:</p>
+    <ol>
+      <li>Estrarre dal PDF i concetti fondamentali:
+        <ul>
+          <li>Introduzione su Freud e sulla sua visione della mente;</li>
+          <li>Sezione sull’Es;</li>
+          <li>Sezione sull’Io;</li>
+          <li>Sezione sul Super-Io.</li>
+        </ul>
+      </li>
+      <li>Riscrivere questi contenuti in forma chiara, didattica e destinata agli studenti.</li>
+      <li>Mantenere la fedeltà al testo, ma con una struttura coerente a una web app.</li>
+    </ol>
+    <p>
+      La Prima Parte, quindi, serve solo a produrre il testo che verrà poi inserito nel sito.
+      Nessun codice. Nessun file HTML. Nessuna immagine.
+    </p>
+  </section>
+
+  <section id="parte2-chatgpt-testo">
+    <h3>Parte 2 — Preparare ChatGPT a leggere il documento e riscrivere il testo</h3>
+    <p>
+      Una volta scelto il materiale, bisogna istruire ChatGPT affinché:
+    </p>
+    <ol>
+      <li>legga il PDF,</li>
+      <li>riconosca le sezioni,</li>
+      <li>riscriva <strong>solo</strong> il testo necessario per le quattro sezioni della web app.</li>
+    </ol>
+    <p>Il tutorial deve fornire un prompt chiaro, ad esempio:</p>
+    <div class="highlight">
+      <p>
+        «Ti allego un documento PDF su Freud. Voglio che tu lo legga e che estragga TUTTI i contenuti necessari per creare le sezioni della web app:
+        Introduzione – Es – Io – Super-Io. Riscrivi questi contenuti in forma sintetica e didattica.
+        In questa fase devi produrre <strong>solo testo</strong>, senza immagini, senza video, senza mappe, senza codice.
+        Questo materiale verrà usato nella fase successiva per costruire il sito.»
+      </p>
+    </div>
+    <p>
+      Questa seconda parte serve a una cosa sola: <strong>preparare un documento conclusivo</strong> che conterrà tutti i testi già riscritti.
+      E questo documento (solo testo) verrà allegato nella Fase 3, quando ChatGPT genererà:
+    </p>
+    <ul>
+      <li><code>index.html</code></li>
+      <li><code>style.css</code></li>
+      <li><code>script.js</code></li>
+      <li>struttura della cartella della web app</li>
+    </ul>
+  </section>
+
+  <section id="parte3-media">
+    <h2>Parte 3 – Inserire immagini, video e geolocalizzazione nella web app</h2>
+    <p>
+      Questa parte del lavoro serve per preparare tutto il materiale multimediale prima che ChatGPT generi il codice finale della web app.
+      In questa fase non si crea ancora l’HTML: si forniscono all’IA tutti gli elementi che dovrà inserire.
+    </p>
+
+    <h3>1. Allegare le immagini</h3>
+    <p>Per usare le immagini nella web app, devi prima allegarle direttamente a ChatGPT.</p>
+    <ol>
+      <li>Scegli le immagini.</li>
+      <li>Rinominale in modo semplice (es. <code>es.jpg</code>, <code>io.jpg</code>, <code>superio.jpg</code>).</li>
+      <li>Preparale per essere inserite nella cartella <code>assets/</code>.</li>
+      <li>Allegale alla chat.</li>
+    </ol>
+    <p>
+      Nel tutorial va scritto così:
+    </p>
+    <div class="highlight">
+      <p>
+        «Allega ora a ChatGPT tutte le immagini che vuoi inserire nella web app. I file saranno collocati nella cartella
+        <code>assets/</code>, che sarà creata automaticamente nella fase di generazione del codice.»
+      </p>
+    </div>
+    <p>
+      Senza questo allegato, l’IA non potrà inserirle nell’HTML.
+    </p>
+
+    <h3>2. Inserire un video YouTube</h3>
+    <p>Ci sono due modi per far inserire un video YouTube nella web app:</p>
+    <h4>Metodo A: incollare l’URL</h4>
+    <p>
+      È il modo più rapido. Incolli il link del video, e ChatGPT genererà la sezione video usando un iframe standard.
+    </p>
+    <h4>Metodo B: incollare il codice di incorporamento (embed)</h4>
+    <p>
+      È il metodo più preciso. Su YouTube:
+    </p>
+    <ul>
+      <li>apri il video;</li>
+      <li>clicca su <strong>Condividi</strong>;</li>
+      <li>seleziona <strong>Incorpora</strong>;</li>
+      <li>copia tutto il codice <code>&lt;iframe&gt; … &lt;/iframe&gt;</code>.</li>
+    </ul>
+    <p>Il testo del tutorial:</p>
+    <div class="highlight">
+      <p>
+        «Per inserire un video, incolla nella chat l’URL di YouTube oppure il codice di incorporamento.
+        ChatGPT aggiungerà automaticamente l’iframe nella sezione dedicata ai video.»
+      </p>
+    </div>
+
+    <h3>3. Preparare la geolocalizzazione (Vienna)</h3>
+    <p>
+      Per inserire una mappa nella web app serve un solo dato essenziale: le coordinate del luogo da visualizzare.
+      Nel nostro caso useremo Vienna:
+    </p>
+    <ul>
+      <li>Latitudine: <code>48.2082</code></li>
+      <li>Longitudine: <code>16.3738</code></li>
+    </ul>
+    <p>Il testo del tutorial:</p>
+    <div class="highlight">
+      <p>
+        «Indica a ChatGPT le coordinate geografiche del punto che vuoi mostrare nella mappa.
+        Per Vienna usa: latitudine 48.2082, longitudine 16.3738. L’IA userà questi valori per generare la sezione della mappa.»
+      </p>
+    </div>
+  </section>
+
+  <section id="parte4-zip">
+    <h2>Parte 4 — Far generare a ChatGPT la web app completa (file ZIP finale)</h2>
+    <p>In questa fase hai già tutto ciò che serve:</p>
+    <ul>
+      <li>il testo tratto dal documento <strong>Freud.pdf</strong>;</li>
+      <li>le immagini allegate e rinominate correttamente;</li>
+      <li>i video YouTube (link o codici di incorporamento);</li>
+      <li>le coordinate geografiche (nel nostro caso Vienna: 48.2082, 16.3738).</li>
+    </ul>
+    <p>
+      Adesso si passa al punto cruciale: dire a ChatGPT di usare autonomamente questi materiali
+      per costruire la web app completa e consegnarla in un file ZIP.
+    </p>
+
+    <h3>1. Dare a ChatGPT tutti gli elementi prima della richiesta finale</h3>
+    <p>
+      Prima della richiesta definitiva devi assicurarti che l’IA abbia:
+    </p>
+    <ul>
+      <li>il documento con i testi della web app (già puliti e riscritti);</li>
+      <li>le immagini allegate nella chat;</li>
+      <li>i video (URL o iframe);</li>
+      <li>le coordinate della mappa.</li>
+    </ul>
+    <p>
+      Solo quando tutti questi materiali sono presenti nella conversazione, puoi passare alla richiesta finale.
+    </p>
+
+    <h3>2. La richiesta finale da usare su ChatGPT</h3>
+    <p>
+      Il punto del tutorial è dare agli studenti/docenti una frase chiara, che può essere copiata e incollata.
+      Eccola:
+    </p>
+    <div class="highlight">
+      <p>
+        «Ora crea la web app completa usando TUTTI i materiali che ti ho fornito.
+        Genera tre file: <code>index.html</code> con testo, immagini, video e mappa;
+        <code>style.css</code> con lo stile della pagina; <code>script.js</code> con il codice per la mappa e le funzioni interattive.
+        Crea anche la cartella <code>assets/</code> e inserisci i nomi delle immagini che ti ho allegato.
+        Organizza tutto in un’unica struttura di progetto pronta per essere compressa.
+        Quando hai generato tutti i file, consegnami il pacchetto in un file ZIP scaricabile.»
+      </p>
+    </div>
+
+    <p>Con questa istruzione:</p>
+    <ul>
+      <li>ChatGPT usa il testo per riempire automaticamente le sezioni (introduzione, Es, Io, Super-Io);</li>
+      <li>inserisce le immagini nel punto logico del testo;</li>
+      <li>colloca i video nella sezione video, costruendo l’iframe;</li>
+      <li>genera la geolocalizzazione usando le coordinate di Vienna;</li>
+      <li>prepara <code>index.html</code>, <code>style.css</code>, <code>script.js</code> e la cartella <code>assets/</code>;</li>
+      <li>impacchetta tutto in uno ZIP pronto da caricare su GitHub.</li>
+    </ul>
+
+    <h3>3. Come ChatGPT deve consegnare lo ZIP</h3>
+    <p>
+      Il tutorial deve specificare ciò che l’IA deve fare:
+    </p>
+    <div class="highlight">
+      <p>
+        «Una volta creati i tre file e la cartella <code>assets</code>, genera un file ZIP contenente l’intera struttura della web app.
+        Fornisci il link per scaricare lo ZIP direttamente dalla chat.»
+      </p>
+    </div>
+    <p>
+      In questo modo l’utente riceve subito una struttura del tipo:
+    </p>
+<pre>freud-es-io-superio/
+│
+├── index.html
+├── style.css
+├── script.js
+└── assets/
+      ├── es.jpg
+      ├── io.jpg
+      └── superio.jpg</pre>
+  </section>
+
+  <section id="gh-parte1">
+    <h2>Seconda parte – Scaricare il tutto in GitHub</h2>
+    <h3>Parte 1 – Caricare la web app su GitHub (prima fase)</h3>
+    <p>
+      Questa fase del tutorial spiega come portare la web app generata da ChatGPT dentro GitHub, per poi renderla pubblica.
+    </p>
+
+    <h4>1. Decomprimere la cartella ZIP</h4>
+    <p>Dopo aver ricevuto da ChatGPT il file ZIP della web app:</p>
+    <ol>
+      <li>scaricalo sul computer;</li>
+      <li>fai clic con il tasto destro;</li>
+      <li>scegli “Estrai” o “Decomprimi”.</li>
+    </ol>
+    <p>Otterrai una cartella con dentro tutti i file del progetto:</p>
+<pre>index.html
+style.css
+script.js
+assets/</pre>
+    <p>È questa cartella che devi caricare su GitHub.</p>
+
+    <h4>2. Creare un nuovo progetto (repository) su GitHub</h4>
+    <p>Per inserire la web app online, bisogna prima crearle una “casa” dentro GitHub. I passaggi:</p>
+    <ol>
+      <li>vai su <code>github.com</code> ed effettua l’accesso;</li>
+      <li>in alto a destra clicca su <strong>+</strong>;</li>
+      <li>scegli <strong>New repository</strong>;</li>
+      <li>assegna un nome al progetto (es. <code>freud-es-io-superio</code>);</li>
+      <li>lascia il repository <strong>Public</strong> (necessario per pubblicarlo online);</li>
+      <li>non aggiungere file o template (no README, no <code>.gitignore</code>);</li>
+      <li>clicca su <strong>Create repository</strong>.</li>
+    </ol>
+
+    <figure>
+      <img src="assets/New-repository.jpeg.png" alt="Menu New repository su GitHub">
+      <figcaption>Dal profilo GitHub, usa il menu “+” per creare un nuovo repository.</figcaption>
+    </figure>
+
+    <figure>
+      <img src="assets/CreareRepository.jpeg.png" alt="Schermata di creazione del repository">
+      <figcaption>Schermata di configurazione del nuovo repository: nome, visibilità e opzioni.</figcaption>
+    </figure>
+
+    <figure>
+      <img src="assets/Creating.jpeg.png" alt="Repository appena creato">
+      <figcaption>Il repository vuoto appena creato, pronto per ricevere i file della web app.</figcaption>
+    </figure>
+  </section>
+
+  <section id="gh-parte2">
+    <h2>Parte 2 – Inserire i file della web app in GitHub</h2>
+    <p>
+      Una volta creato il repository vuoto su GitHub e decompressa la cartella ZIP della web app,
+      si passa all’inserimento dei file nel progetto.
+    </p>
+
+    <h3>1. Caricare i file principali (<code>index.html</code>, <code>style.css</code>, <code>script.js</code>)</h3>
+    <p>
+      Questi sono i tre file fondamentali della web app. Vanno caricati direttamente nella root del repository.
+    </p>
+    <ol>
+      <li>Apri il repository su GitHub.</li>
+      <li>Clicca su <strong>Add file</strong>.</li>
+      <li>Seleziona <strong>Upload files</strong>.</li>
+      <li>Trascina i tre file nella finestra:
+<pre>index.html
+style.css
+script.js</pre>
+      </li>
+      <li>Scorri in basso e clicca <strong>Commit changes</strong>.</li>
+    </ol>
+
+    <figure>
+      <img src="assets/Choose.jpeg.png" alt="Area per caricare i file nella root del repository">
+      <figcaption>Zona di upload dei file principali del progetto nel repository GitHub.</figcaption>
+    </figure>
+
+    <figure>
+      <img src="assets/Uploading.jpeg.png" alt="Schermata di conferma del commit dopo l'upload">
+      <figcaption>Schermata di commit dopo aver caricato i file: ultimo passaggio prima del salvataggio.</figcaption>
+    </figure>
+
+    <h3>2. Creare una cartella per le immagini (metodo <code>.gitkeep</code>)</h3>
+    <p>
+      GitHub non permette di creare una cartella vuota: per questo si usa un file “segnaposto”, chiamato <code>.gitkeep</code>,
+      che serve esclusivamente a far comparire la cartella nel repository.
+    </p>
+    <ol>
+      <li>Nel repository, clicca <strong>Add file → Create new file</strong>.</li>
+      <li>Nella casella del nome del file scrivi: <code>assets/.gitkeep</code></li>
+      <li>Lascia il file vuoto.</li>
+      <li>Clicca <strong>Commit changes</strong>.</li>
+    </ol>
+
+    <figure>
+      <img src="assets/gitkeep.jpeg.png" alt="Creazione del file gitkeep nella cartella assets">
+      <figcaption>Creazione del file <code>gitkeep</code> all’interno della cartella <code>assets</code>.</figcaption>
+    </figure>
+  </section>
+
+  <section id="gh-parte3">
+    <h2>Parte 3 – Inserire le immagini nella cartella <code>assets</code> su GitHub</h2>
+    <p>
+      Dopo aver creato la cartella <code>assets</code> tramite il file <code>.gitkeep</code>, bisogna caricare le immagini della web app
+      all’interno di quella cartella. Questa operazione si fa direttamente dal repository GitHub.
+    </p>
+
+    <h3>1. Aprire la cartella <code>assets</code></h3>
+    <ol>
+      <li>Vai nel tuo repository su GitHub.</li>
+      <li>Clicca sulla cartella <strong>assets</strong>. Al suo interno vedrai solo il file <code>.gitkeep</code>.</li>
+    </ol>
+
+    <h3>2. Caricare le immagini</h3>
+    <ol>
+      <li>Dentro la cartella <code>assets</code>, clicca su <strong>Add file</strong>.</li>
+      <li>Seleziona <strong>Upload files</strong>.</li>
+      <li>Trascina qui tutte le immagini usate dalla web app (es. <code>es.jpg</code>, <code>io.jpg</code>, <code>superio.jpg</code>).</li>
+      <li>Scorri in basso e clicca <strong>Commit changes</strong>.</li>
+    </ol>
+
+    <figure>
+      <img src="assets/UploadFiles.jpeg.png" alt="Upload dei file nella cartella assets">
+      <figcaption>Upload delle immagini dentro la cartella <code>assets</code> del repository GitHub.</figcaption>
+    </figure>
+
+    <p>A caricamento completato, la struttura del repository deve apparire così:</p>
+<pre>freud-es-io-superio/
+│
+├── index.html
+├── style.css
+├── script.js
+└── assets/
+      ├── .gitkeep
+      ├── es.jpg
+      ├── io.jpg
+      └── superio.jpg</pre>
+  </section>
+
+  <section id="gh-pages">
+    <h2>Parte finale – Pubblicare la web app con GitHub Pages</h2>
+    <p>
+      Una volta caricati tutti i file del progetto nel repository — compresi <code>index.html</code>,
+      <code>style.css</code>, <code>script.js</code> e la cartella <code>assets</code> con le immagini —
+      l’ultimo passo è rendere la web app visibile online tramite GitHub Pages.
+    </p>
+
+    <h3>1. Aprire le impostazioni del repository</h3>
+    <ol>
+      <li>Entra nel repository della tua web app.</li>
+      <li>In alto, clicca su <strong>Settings</strong>.</li>
+      <li>Nel menu laterale, scorri fino alla voce <strong>Pages</strong> (sezione “Code and automation”).</li>
+    </ol>
+    <p>Questa sezione permette di pubblicare la web app come sito.</p>
+
+    <h3>2. Attivare GitHub Pages</h3>
+    <p>Nella sezione “Pages”:</p>
+    <ol>
+      <li>Trova la voce <strong>Build and deployment</strong>.</li>
+      <li>Nella tendina <strong>Source</strong>, seleziona <em>Deploy from a branch</em>.</li>
+      <li>Compariranno due nuove tendine:
+        <ul>
+          <li><strong>Branch</strong></li>
+          <li><strong>Folder</strong></li>
+        </ul>
+      </li>
+      <li>Imposta così:
+        <ul>
+          <li>Branch: <code>main</code></li>
+          <li>Folder: <code>/ (root)</code></li>
+        </ul>
+      </li>
+      <li>Clicca <strong>Save</strong>.</li>
+    </ol>
+    <p>GitHub inizierà a generare la pagina.</p>
+
+    <h3>3. Attendere la pubblicazione</h3>
+    <p>
+      Dopo qualche secondo comparirà un messaggio di conferma con il link del sito, del tipo:
+    </p>
+<pre>https://tuo-nome.github.io/nome-del-repository</pre>
+    <p>
+      Questo è l’indirizzo pubblico della web app. Se non compare subito, aggiorna la pagina dopo 20–30 secondi:
+      GitHub Pages impiega un attimo a costruire il sito.
+    </p>
+
+    <h3>4. Verifica finale</h3>
+    <p>
+      Apri il link generato. Dovresti vedere la tua web app perfettamente online, con:
+    </p>
+    <ul>
+      <li>testi;</li>
+      <li>immagini;</li>
+      <li>video;</li>
+      <li>mappa.</li>
+    </ul>
+    <p>
+      Se qualcosa non appare, di solito le cause sono:
+    </p>
+    <ul>
+      <li>nome errato delle immagini;</li>
+      <li>file caricati nella cartella sbagliata;</li>
+      <li>struttura delle cartelle modificata accidentalmente.</li>
+    </ul>
+    <p>
+      In quel caso basta correggere e GitHub aggiornerà automaticamente il sito.
+    </p>
+  </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
